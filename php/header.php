@@ -44,6 +44,13 @@ $number = array(
             </div>
             <div class="header__requestcall">
                 <button class="header__btn btn">Заказать звонок</button>
+                <div class="header__popup">
+                    <form action="mail.php"></form>
+                    <input class="header__popup-name" type="text" name='name' placeholder="ВАШЕ ИМЯ">
+                    <input class="header__popup-phone" type="text" name='tel' placeholder="НОМЕР ТЕЛЕФОНА">
+                    <input class="header__popup-btn" type="submit" value="ЗАКАЗАТЬ">
+                    </form>
+                </div>
                 <div class="header__requestcall-register">
                     <a href="#" class="header__requestcall-link">online запись</a>
                 </div>

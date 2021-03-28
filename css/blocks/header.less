@@ -195,6 +195,8 @@
     }
 
     &__requestcall {
+        position: relative;
+
         &-register {
             padding: 12px 0 0 35px;
             position: relative;
@@ -221,6 +223,71 @@
             letter-spacing: 0.05em;
             color: #484949;
 
+        }
+    }
+
+    &__popup {
+        visibility: hidden;
+        opacity: 0;
+        width: 300px;
+        height: 225px;
+        position: absolute;
+        background-color: rgba(146, 146, 146, .9);
+        left: -313px;
+        top: 51px;
+        padding-top: 30px;
+        border-radius: 29px;
+        z-index: 5;
+        transition: .5s;
+
+        &.open {
+            visibility: visible;
+            opacity: 1;
+            transition: .5s;
+        }
+
+        &::after {
+            content: '\f041';
+            position: absolute;
+            font-family: Font Awesome\ 5 Free;
+            font-weight: 900;
+            height: 24px;
+            width: 50px;
+            top: -24px;
+            right: -16px;
+            font-size: 25px;
+            transform: rotate(-132deg);
+            color: rgba(146, 146, 146, 0.9);
+        }
+
+        &-name,
+        &-phone {
+            width: 80%;
+            margin: 0 auto;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 10px;
+            border-radius: 20px;
+            border: none;
+            margin-bottom: 15px;
+
+            &:focus {
+                outline: none;
+                background-color: rgb(240, 239, 239);
+                border: none;
+            }
+        }
+
+        &-btn {
+            .btn();
+            .btn-link(@sky);
+            width: 40%;
+            height: 40px;
+            border-radius: 20px;
+            margin: 30px auto 0;
+            display: block;
         }
     }
 

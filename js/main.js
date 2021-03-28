@@ -4,6 +4,9 @@ let burger = document.querySelector('.burger__btn');
 let nav = document.querySelector('.nav');
 let scrollTop = document.querySelector('.scroll__top');
 let shadow = document.querySelector('.block__shadow');
+let btnCall = document.querySelector('.header__btn');
+let popup = document.querySelector('.header__popup');
+let popupBtn = document.querySelector('.header__popup-btn');
 
 
 burger.addEventListener('click', (e) => {
@@ -42,3 +45,27 @@ shadow.addEventListener('click', (e) => {
     }
 
 });
+
+btnCall.addEventListener('click', (e) => {
+    popup.classList.toggle('open')
+});
+
+popupBtn.addEventListener('click', () => {
+    popup.classList.toggle('open')
+    clearPopup()
+});
+
+window.addEventListener('click', (e) => {
+    if (!e.target.parentNode.classList.contains('header__requestcall') && !e.target.parentNode.classList.contains('header__popup')) {
+        popup.classList.remove('open')
+    }
+});
+
+function clearPopup() {
+    let inputs = popup.querySelectorAll('input[type="text"]');
+    inputs.forEach(element => {
+        setTimeout(function () {
+            element.value = ''
+        }, 1000)
+    });
+}
